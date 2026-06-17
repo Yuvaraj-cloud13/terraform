@@ -48,5 +48,15 @@ variable "cidr" {
 
 variable "instances" {
   type = list
-  default = ["mongodb", "redis", "mysql", "rabbitmq"]  
+  default = ["mongodb", "redis", "mysql", "rabbitmq", "catalogue", "user", "cart", "shipping", "payment", "frontend"]  
+}
+
+
+variable "zone_id" {
+  type = string
+  default = "Z00746892H2TX4JV63UWM"
+}
+
+variable "domine_name" {
+  default = "uvraj.online"
 }
