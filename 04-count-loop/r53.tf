@@ -10,7 +10,7 @@ resource "aws_route53_record" "roboshop" {
 
 
 
-resource "aws_route53_record" "roboshop" {
+resource "aws_route53_record" "frontend" {
   count = contains(var.instances, "frontend") ? 1 : 0
   zone_id = var.zone_id
   name    = "${var.project}-${var.environment}.${var.domine_name}"
