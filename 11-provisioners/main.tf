@@ -57,6 +57,12 @@ resource "aws_instance" "terraform_demo" {
   }
 
 
+  provisioner "file" {
+    source      = "script.sh"
+    destination = "/tmp/script.sh"
+  }
+
+
 
 
 }
