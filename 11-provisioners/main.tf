@@ -41,7 +41,7 @@ resource "aws_instance" "terraform_demo" {
   }
 
 
-  provisioner "remote-exec" {
+  /* provisioner "remote-exec" {
     inline = [
       "sudo dnf install nginx -y",
       "sudo systemctl start nginx"
@@ -54,7 +54,7 @@ resource "aws_instance" "terraform_demo" {
     inline = [
       "sudo systemctl stop nginx"
     ]
-  }
+  } */
 
 
   provisioner "file" {
