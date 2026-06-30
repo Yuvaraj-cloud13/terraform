@@ -44,6 +44,7 @@ resource "aws_instance" "terraform_demo" {
   provisioner "remote-exec" {
     inline = [
       "sudo dnf install nginx -y",
+      "sudo systemctl start nginx"
     ]
   }
 
@@ -67,6 +68,14 @@ resource "aws_security_group" "allow_terraform" {
   ingress {
     from_port        = 22
     to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+
+  ingress {
+    from_port        = 80
+    to_port          = 80
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
